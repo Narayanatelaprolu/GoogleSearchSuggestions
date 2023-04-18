@@ -23,8 +23,8 @@ class GoogleSuggestions extends Component {
 
   render() {
     const {searchInput} = this.state
-    const {SuggestionList} = this.props
-    const searchResults = SuggestionList.filter(eachSuggestion =>
+    const {suggestionsList} = this.props
+    const searchResults = suggestionsList.filter(eachSuggestion =>
       eachSuggestion.suggestion
         .toLowerCase()
         .includes(searchInput.toLowerCase()),
@@ -47,7 +47,7 @@ class GoogleSuggestions extends Component {
               <input
                 type="search"
                 className="search-input"
-                placeholder="search-Google"
+                placeholder="search Google"
                 onChange={this.onChangeSearchInput}
                 value={searchInput}
               />
